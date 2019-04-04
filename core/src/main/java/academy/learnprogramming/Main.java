@@ -17,10 +17,17 @@ public class Main
         //create context (container)
         ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(CONFIG_LOCATION);
 
+        //get numberGenerator bean from context
         NumberGenerator numberGenerator = context.getBean("numberGenerator", NumberGenerator.class);
 
         int number = numberGenerator.next();
         log.info("number = {}", number);
+
+        //get game bean from context
+        Game game = context.getBean(Game.class);
+
+        //call reset method
+        game.reset();
 
         context.close();
     }
