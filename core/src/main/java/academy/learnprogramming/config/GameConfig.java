@@ -1,7 +1,8 @@
 package academy.learnprogramming.config;
 
-import academy.learnprogramming.GuessCount;
-import academy.learnprogramming.MaxNumber;
+import academy.learnprogramming.Annotations.GuessCount;
+import academy.learnprogramming.Annotations.MaxNumber;
+import academy.learnprogramming.Annotations.MinNumber;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +18,9 @@ public class GameConfig
     @Value("${game.guessCount:10}")
     private int guessCount;
 
+    @Value("${game.minNumber:0}")
+    private int minNumber;
+
     @Bean
     @MaxNumber
     public int maxNumber()
@@ -29,5 +33,12 @@ public class GameConfig
     public int guessCount()
     {
         return guessCount;
+    }
+
+    @Bean
+    @MinNumber
+    public int minNumber()
+    {
+        return minNumber;
     }
 }

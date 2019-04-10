@@ -1,4 +1,4 @@
-package academy.learnprogramming;
+package academy.learnprogramming.Annotations;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -8,9 +8,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Target({ElementType.FIELD, ElementType.PARAMETER, ElementType.METHOD})
-@Retention(RetentionPolicy.RUNTIME)
+@Retention(RetentionPolicy.RUNTIME  )
 @Qualifier
-public @interface MaxNumber
+public @interface MinNumber
 {
 
 }
